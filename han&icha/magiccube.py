@@ -40,22 +40,21 @@ class MagicCube:
 
         return score
 
-def neighbors_function(self, cube=None):
-    if cube is None:
-        cube = self.cube
+    def neighbors_function(self, cube=None):
+        if cube is None:
+            cube = self.cube
 
-    neighbors = []
-    positions = np.array(list(product(range(self.N), repeat=3)))
+        neighbors = []
+        positions = np.array(list(product(range(self.N), repeat=3)))
 
-    for x, y, z in positions:
-        for dx, dy, dz in product([-1, 0, 1], repeat=3):
-            if dx == 0 and dy == 0 and dz == 0:
-                continue
-            nx, ny, nz = x + dx, y + dy, z + dz
-            if 0 <= nx < self.N and 0 <= ny < self.N and 0 <= nz < self.N:
-                new_cube = cube.copy()
-                # Pastikan operasi pertukaran dilakukan pada bentuk 3D
-                new_cube[x, y, z], new_cube[nx, ny, nz] = new_cube[nx, ny, nz], new_cube[x, y, z]
-                neighbors.append((new_cube, (x, y, z), new_cube[x, y, z], (nx, ny, nz), new_cube[nx, ny, nz]))
+        for x, y, z in positions:
+            for dx, dy, dz in product([-1, 0, 1], repeat=3):
+                if dx == 0 and dy == 0 and dz == 0:
+                    continue
+                nx, ny, nz = x + dx, y + dy, z + dz
+                if 0 <= nx < self.N and 0 <= ny < self.N and 0 <= nz < self.N:
+                    new_cube = cube.copy()
+                    new_cube[x, y, z], new_cube[nx, ny, nz] = new_cube[nx, ny, nz], new_cube[x, y, z]
+                    neighbors.append(new_cube)
 
-    return neighbors
+        return neighbors
