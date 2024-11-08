@@ -210,11 +210,11 @@ def crossover(parent1, parent2):
     child1, child2 = [None]*size, [None]*size
     start, end = sorted(random.sample(range(size), 2))
     
-    # Copy segment from parent1 to child1 and parent2 to child2
+    # copy segment dari parent1 ke child1, terus parent2 ke child2
     child1[start:end+1] = parent1[start:end+1]
     child2[start:end+1] = parent2[start:end+1]
     
-    # Fill the remaining positions in child1 from parent2 and vice versa without duplicating
+    # ngisi posisi yang masih kosong di child1 dari parent2 and vice versa tanpa ada duplikat
     fill_remaining(child1, parent2, start, end)
     fill_remaining(child2, parent1, start, end)
     
@@ -252,7 +252,7 @@ def genetic_algorithm():
         time.sleep(1)
         print("mengonfigurasi kubus.....")
         time.sleep(1)
-    # Iterasi untuk menemukan solusi optimal
+    # Iterasi untuk nemuin solusi optimal
         for generation in range(iterations):  # Maksimum 100 generasi
             print(f"Generasi: {generation+1}")
             
@@ -301,7 +301,7 @@ def genetic_algorithm():
         print(best_cube)
         time.sleep(2)
         print()
-        print("Nilai objektif terbaik:", best_objective_value)
+        # print("Nilai objektif terbaik:", best_objective_value)
         perfection_percentage = round((best_objective_value/TARGET_OBJECTIVE * 100), 2)
         print(f'Persentase Kesempurnaaan: {perfection_percentage}%, ({best_objective_value}/{TARGET_OBJECTIVE})')
         
