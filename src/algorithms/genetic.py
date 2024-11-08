@@ -313,7 +313,7 @@ def genetic_algorithm():
         plt.ylabel("Best Objective Value")
         plt.show()
 
-# Menjalankan algoritma genetika
+#runn
 if __name__ == "__main__":
     genetic_algorithm()
 
