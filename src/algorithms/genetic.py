@@ -198,14 +198,14 @@ TARGET_OBJECTIVE = 109  # Nilai target untuk nilai objektif
 
 # Fungsi seleksi untuk memilih parent terbaik dari populasi secara acak
 def select_parent(population):
-    """Memilih satu parent terbaik dari 20 kandidat yang dipilih secara acak."""
+    # Memilih satu parent terbaik dari 20 kandidat yang dipilih secara acak
     candidates = random.sample(population, 20)
     candidates.sort(key=lambda cube: abs(objective_function(cube) - TARGET_OBJECTIVE))
     return candidates[0]
 
 # Fungsi crossover untuk menghasilkan anak dari dua parent
 def crossover(parent1, parent2):
-    """Menghasilkan dua anak dengan crossover dari dua parent menggunakan order crossover."""
+    # Menghasilkan dua anak dengan crossover dari dua parent
     size = len(parent1)
     child1, child2 = [None]*size, [None]*size
     start, end = sorted(random.sample(range(size), 2))
@@ -273,6 +273,8 @@ def genetic_algorithm():
                 # Menambahkan anak ke populasi baru
                 new_population.append(child1)
                 new_population.append(child2)
+                
+            
             
             # Populasi lama digantikan oleh populasi baru
             population = new_population
@@ -306,7 +308,7 @@ def genetic_algorithm():
         print(f'Persentase Kesempurnaaan: {perfection_percentage}%, ({best_objective_value}/{TARGET_OBJECTIVE})')
         
         
-        #Visualisasi regresi
+        # Visualisasi regresi
         plt.plot(objective_value_reg, marker='o')
         plt.title("Objective Value Progression")
         plt.xlabel("Generation")
