@@ -30,7 +30,7 @@ class SteepestHillClimbing:
 
             self.initial_state = best_neighbor
             self.objective_function = best_score
-            print(f"Iterasi {iteration_count}: Skor Heuristik = {self.objective_function}")
+            print(f"Iterasi {iteration_count}: Skor sekarang = {self.objective_function}")
             
             if self.is_solved(self.objective_function):
                 break
@@ -45,9 +45,12 @@ class SteepestHillClimbing:
         return score == 0
 
 main = SteepestHillClimbing(max_iterations=100)
-print("Kubus awal (random):", main.initial_state)
+print("Visualisasi kubus dari kiri ke kanan")
+print("Kubus awal (random):")
+print(main.initial_state)
 print("Skor awal:", main.objective_function)
 
 final_state, final_score = main.search()
 print("Skor akhir:", final_score)
-print("Kubus akhir:", final_state)
+print("Kubus akhir:")
+print(final_state)
