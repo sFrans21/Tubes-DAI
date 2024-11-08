@@ -38,19 +38,19 @@ class SteepestHillClimbing:
             iteration_count += 1
 
         end_time = time.time()
-        print(f"Waktu yang dibutuhkan: {end_time - start_time} detik")
-        return self.initial_state, self.objective_function
+        execute_time = end_time - start_time
+        return self.initial_state, self.objective_function, execute_time
 
     def is_solved(self, score):
         return score == 0
 
-main = SteepestHillClimbing(max_iterations=100)
-print("Visualisasi kubus dari bawah ke atas, jadinya bayangkan tiap lapisan ditumpuk saja")
-print("Kubus awal (random):")
-print(main.initial_state)
-print("Skor awal:", main.objective_function)
+# main = SteepestHillClimbing(max_iterations=100)
+# print("Visualisasi kubus dari bawah ke atas, jadinya bayangkan tiap lapisan ditumpuk saja")
+# print("Kubus awal (random):")
+# print(main.initial_state)
+# print("Skor awal:", main.objective_function)
 
-final_state, final_score = main.search()
-print("Skor akhir:", final_score)
-print("Kubus akhir:")
-print(final_state)
+# final_state, final_score = main.search()
+# print("Skor akhir:", final_score)
+# print("Kubus akhir:")
+# print(final_state)
