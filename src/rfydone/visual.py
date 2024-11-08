@@ -1,7 +1,3 @@
-# Cara penggunaan, saat kode dijalankan, akan muncul visualisasi kubus awal
-# Silang pop up tersebut maka algoritma akan berjalan
-# Setelah menunggu beberapa detik, akan muncul visualisasi kubus akhir
-
 import numpy as np
 import matplotlib.pyplot as plt
 

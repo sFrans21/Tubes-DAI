@@ -1,3 +1,7 @@
+# Cara penggunaan, saat kode dijalankan, akan muncul visualisasi kubus awal
+# Silang pop up tersebut maka algoritma akan berjalan
+# Setelah menunggu beberapa detik, akan muncul visualisasi kubus akhir
+
 from SteepestHillClimb import SteepestHillClimbing
 from visual import plot_cube
 
