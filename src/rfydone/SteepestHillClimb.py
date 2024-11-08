@@ -45,7 +45,7 @@ class SteepestHillClimbing:
         return score == 0
 
 main = SteepestHillClimbing(max_iterations=100)
-print("Visualisasi kubus dari kiri ke kanan")
+print("Visualisasi kubus dari bawah ke atas, jadinya bayangkan tiap lapisan ditumpuk saja")
 print("Kubus awal (random):")
 print(main.initial_state)
 print("Skor awal:", main.objective_function)
