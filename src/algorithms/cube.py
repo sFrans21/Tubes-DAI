@@ -79,6 +79,6 @@ def mutate(cube, mutation_rate=0.05):
             i, j = random.sample(range(125), 2)
             cube[i], cube[j] = cube[j], cube[i]
             
-#PUSING ANJJJJ            
+#PUSINGGG            
 cube = create_magic_cube()
 print(cube)
