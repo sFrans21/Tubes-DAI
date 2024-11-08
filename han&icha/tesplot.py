@@ -94,13 +94,13 @@ class SimulatedAnnealing:
         plt.show()
 
 # Penggunaan
-main = SimulatedAnnealing(initial_temperature=1000, cooling_rate=0.99, temperature_threshold=0.001, stagnation_threshold=50)
-print("Kubus awal (random):", main.current_state)
-print("Skor awal:", main.current_score)
+# main = SimulatedAnnealing(initial_temperature=1000, cooling_rate=0.99, temperature_threshold=0.001, stagnation_threshold=50)
+# print("Kubus awal (random):", main.current_state)
+# print("Skor awal:", main.current_score)
 
-final_state, final_score = main.search()
-print("Skor akhir:", final_score)
-print("Kubus akhir:", final_state)
+# final_state, final_score = main.search()
+# print("Skor akhir:", final_score)
+# print("Kubus akhir:", final_state)
 
-# Plotting hasil objective function dan probabilitas
-main.plot_objective_function()
+# # Plotting hasil objective function dan probabilitas
+# main.plot_objective_function()
