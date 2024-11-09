@@ -1,7 +1,7 @@
 import random
 import matplotlib.pyplot as plt
 import numpy as py
-from cube.cubeGenetic import create_magic_cube, objective_function, mutate, transform_to_3d
+from gencube import create_magic_cube, objective_function, mutate, transform_to_3d
 import time
 
 # Konstanta
@@ -110,7 +110,7 @@ def genetic_algorithm():
         duration = end_time - start_time
         
         # Menampilkan solusi terbaik
-        time.sleep(2)
+       
         print("Selesai!")
         time.sleep(1)
         print(f"Durasi pencarian: {duration:.2f} detik")
