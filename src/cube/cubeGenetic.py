@@ -1,17 +1,16 @@
-# cube.py
-import random
 
+import random
 import numpy as np
 
 # Konstanta
-MAGIC_CONST = 315  # Nilai konstanta magic untuk perhitungan objektif
+MAGIC_CONST = 315  
 
-# Membuat magic cube baru dengan angka unik dari 1 hingga 125
+
 def create_magic_cube():
     """Membuat magic cube berukuran 5x5x5 dengan angka unik dari 1 sampai 125."""
     return random.sample(range(1, 126), 125)
 
-# Fungsi untuk menghitung nilai objektif dari sebuah magic cube
+
 def objective_function(magic_cube):
     """Menghitung nilai objektif dari magic cube berdasarkan jumlah baris, kolom, dan diagonal yang mencapai MAGIC_CONST."""
     point = 0
@@ -47,7 +46,7 @@ def objective_function(magic_cube):
             line_sum_4 += magic_cube[25 * i + 5 * j + mirr] #kanan atas ke kiri bawah (i)     //nanti gw jelasin ini di kerkom kita ya gess
             line_sum_5 += magic_cube[25 * i + 5 * i + j]#kanan atas ke kiri bawah (j)
             line_sum_6 += magic_cube[25 * i + 5 * mirr + j] #kiri atas ke kanan bawah (j)
-        # point += sum(1 for line_sum in line_sum if line_sum == MAGIC_CONST)  /////
+
        
         point += abs(line_sum_1 - MAGIC_CONST)
         point += abs(line_sum_2 - MAGIC_CONST)
@@ -59,14 +58,13 @@ def objective_function(magic_cube):
        
       #   if line_sum_1 == MAGIC_CONST: point += 1
       #   if line_sum_2 == MAGIC_CONST: point += 1
-      #   if line_sum_3 == MAGIC_CONST: point += 1
-      #   if line_sum_4 == MAGIC_CONST: point += 1
+      #   if line_sum_3 == MAGIC_CONST: point += 1   //konteks: kode ini dipakai untuk sistem skor gw sebelumnya, yaitu penambahan poin
+        # if line_sum_4 == MAGIC_CONST: point += 1   //tiap kali ada yang sesuai magic const. Skor sempurnanya 109
       #   if line_sum_5 == MAGIC_CONST: point += 1
       #   if line_sum_6 == MAGIC_CONST: point += 1
             
             
     #diagonal ruang
-    # line_sum = [0] * 4 //////
     line_sum_1 = 0
     line_sum_2 = 0
     line_sum_3 = 0
@@ -77,7 +75,7 @@ def objective_function(magic_cube):
         line_sum_2 += magic_cube[25 * i + 5 * i + mirr] # dari 90 ke 36
         line_sum_3 += magic_cube[25 * mirr + 5 * i + i] # dari pojok bawah ampe 5 pokonya mah
         line_sum_4 += magic_cube[25 * mirr + 5 * i + mirr] # dari 59 ke 67
-    # point += sum(1 for line_sum in line_sum if line_sum == MAGIC_CONST) /////
+  
     point += abs(line_sum_1 - MAGIC_CONST)
     point += abs(line_sum_2 - MAGIC_CONST)
     point += abs(line_sum_3 - MAGIC_CONST) 
@@ -92,7 +90,7 @@ def initialize_cube(self):
 # Fungsi mutasi untuk magic cube, menukar posisi angka dalam magic cube
 def mutate(cube, mutation_rate=0.05):
     """Mutasi magic cube dengan menukar beberapa angka secara acak, berdasarkan mutation_rate."""
-    num_swaps = random.randint(1, 3)  # Tentukan berapa kali swap
+    num_swaps = random.randint(1, 3)  # Nentuin berapa kali swap
     for _ in range(num_swaps):
         if random.random() < mutation_rate:
             i, j = random.sample(range(125), 2)
@@ -103,11 +101,7 @@ def transform_to_3d(cube):
     """Mengubah list berukuran 125 menjadi 5x5x5 magic cube (3D array)."""
     return np.array(cube).reshape(5, 5, 5)
 
-# Membuat magic cube
+
 cube = create_magic_cube()
-
-# Mengubahnya menjadi bentuk 5x5x5
 magic_cube = transform_to_3d(cube)
-
-# Menampilkan hasil
 # print(magic_cube)
