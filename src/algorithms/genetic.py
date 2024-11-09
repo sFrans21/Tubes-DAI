@@ -189,7 +189,7 @@
 import random
 import matplotlib.pyplot as plt
 import numpy as py
-from cube import create_magic_cube, objective_function, mutate
+from cube import create_magic_cube, objective_function, mutate, transform_to_3d
 import time
 
 # Konstanta
@@ -202,6 +202,7 @@ def select_parent(population):
     candidates = random.sample(population, 20)
     candidates.sort(key=lambda cube: abs(objective_function(cube) - TARGET_OBJECTIVE))
     return candidates[0]
+
 
 # Fungsi crossover untuk menghasilkan anak dari dua parent
 def crossover(parent1, parent2):
@@ -300,7 +301,7 @@ def genetic_algorithm():
         # Menampilkan solusi terbaik
         time.sleep(2)
         print("\nState Kubus terbaik:")
-        print(best_cube)
+        print(transform_to_3d(best_cube))
         time.sleep(2)
         print()
         # print("Nilai objektif terbaik:", best_objective_value)

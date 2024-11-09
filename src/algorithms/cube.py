@@ -1,6 +1,8 @@
 # cube.py
 import random
 
+import numpy as np
+
 # Konstanta
 MAGIC_CONST = 315  # Nilai konstanta magic untuk perhitungan objektif
 
@@ -70,6 +72,11 @@ def objective_function(magic_cube):
     if line_sum_4 == MAGIC_CONST: point += 1
     return float(point)
 
+
+def initialize_cube(self):
+    numbers = np.arange(1, self.N**3 + 1)
+    np.random.shuffle(numbers)
+    return numbers.reshape((self.N, self.N, self.N))
 # Fungsi mutasi untuk magic cube, menukar posisi angka dalam magic cube
 def mutate(cube, mutation_rate=0.05):
     """Mutasi magic cube dengan menukar beberapa angka secara acak, berdasarkan mutation_rate."""
@@ -80,5 +87,15 @@ def mutate(cube, mutation_rate=0.05):
             cube[i], cube[j] = cube[j], cube[i]
             
 #PUSINGGG            
+def transform_to_3d(cube):
+    """Mengubah list berukuran 125 menjadi 5x5x5 magic cube (3D array)."""
+    return np.array(cube).reshape(5, 5, 5)
+
+# Membuat magic cube
 cube = create_magic_cube()
-print(cube)
+
+# Mengubahnya menjadi bentuk 5x5x5
+magic_cube = transform_to_3d(cube)
+
+# Menampilkan hasil
+# print(magic_cube)
