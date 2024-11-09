@@ -22,9 +22,12 @@ def objective_function(magic_cube):
                 line_sum_1 += magic_cube[25 * k + 5 * j + i]       # Baris dalam satu layer
                 line_sum_2 += magic_cube[25 * k + 5 * i + j]       # Kolom dalam satu layer
                 line_sum_3 += magic_cube[25 * j + 5 * i + k]       # Diagonal pada layer
-            if line_sum_1 == MAGIC_CONST: point += 1
-            if line_sum_2 == MAGIC_CONST: point += 1
-            if line_sum_3 == MAGIC_CONST: point += 1
+            # if line_sum_1 == MAGIC_CONST: point += 1
+            # if line_sum_2 == MAGIC_CONST: point += 1
+            # if line_sum_3 == MAGIC_CONST: point += 1
+            point += abs(line_sum_1 - MAGIC_CONST)
+            point += abs(line_sum_2 - MAGIC_CONST)
+            point += abs(line_sum_3 - MAGIC_CONST)
             
             
         # diagonal wajah
@@ -45,12 +48,21 @@ def objective_function(magic_cube):
             line_sum_5 += magic_cube[25 * i + 5 * i + j]#kanan atas ke kiri bawah (j)
             line_sum_6 += magic_cube[25 * i + 5 * mirr + j] #kiri atas ke kanan bawah (j)
         # point += sum(1 for line_sum in line_sum if line_sum == MAGIC_CONST)  /////
-        if line_sum_1 == MAGIC_CONST: point += 1
-        if line_sum_2 == MAGIC_CONST: point += 1
-        if line_sum_3 == MAGIC_CONST: point += 1
-        if line_sum_4 == MAGIC_CONST: point += 1
-        if line_sum_5 == MAGIC_CONST: point += 1
-        if line_sum_6 == MAGIC_CONST: point += 1
+       
+        point += abs(line_sum_1 - MAGIC_CONST)
+        point += abs(line_sum_2 - MAGIC_CONST)
+        point += abs(line_sum_3 - MAGIC_CONST)
+        point += abs(line_sum_4 - MAGIC_CONST)
+        point += abs(line_sum_5 - MAGIC_CONST)
+        point += abs(line_sum_6 - MAGIC_CONST)
+
+       
+      #   if line_sum_1 == MAGIC_CONST: point += 1
+      #   if line_sum_2 == MAGIC_CONST: point += 1
+      #   if line_sum_3 == MAGIC_CONST: point += 1
+      #   if line_sum_4 == MAGIC_CONST: point += 1
+      #   if line_sum_5 == MAGIC_CONST: point += 1
+      #   if line_sum_6 == MAGIC_CONST: point += 1
             
             
     #diagonal ruang
@@ -66,10 +78,10 @@ def objective_function(magic_cube):
         line_sum_3 += magic_cube[25 * mirr + 5 * i + i] # dari pojok bawah ampe 5 pokonya mah
         line_sum_4 += magic_cube[25 * mirr + 5 * i + mirr] # dari 59 ke 67
     # point += sum(1 for line_sum in line_sum if line_sum == MAGIC_CONST) /////
-    if line_sum_1 == MAGIC_CONST: point += 1
-    if line_sum_2 == MAGIC_CONST: point += 1
-    if line_sum_3 == MAGIC_CONST: point += 1
-    if line_sum_4 == MAGIC_CONST: point += 1
+    point += abs(line_sum_1 - MAGIC_CONST)
+    point += abs(line_sum_2 - MAGIC_CONST)
+    point += abs(line_sum_3 - MAGIC_CONST) 
+    point += abs(line_sum_4 - MAGIC_CONST)
     return float(point)
 
 

@@ -194,7 +194,7 @@ import time
 
 # Konstanta
 POPULATION_SIZE = 1000
-TARGET_OBJECTIVE = 109  # Nilai target untuk nilai objektif
+TARGET_OBJECTIVE = 0  # Nilai target untuk nilai objektif
 
 # Fungsi seleksi untuk memilih parent terbaik dari populasi secara acak
 def select_parent(population):
@@ -299,14 +299,17 @@ def genetic_algorithm():
                 break
         
         # Menampilkan solusi terbaik
-        time.sleep(2)
+        time.sleep(1)
+        print("Selesai!")
+        time.sleep(1)
+
         print("\nState Kubus terbaik:")
         print(transform_to_3d(best_cube))
         time.sleep(2)
         print()
         # print("Nilai objektif terbaik:", best_objective_value)
-        perfection_percentage = round((best_objective_value/TARGET_OBJECTIVE * 100), 2)
-        print(f'Persentase Kesempurnaaan: {perfection_percentage}%, ({best_objective_value}/{TARGET_OBJECTIVE})')
+      #   perfection_percentage = round((best_objective_value/TARGET_OBJECTIVE * 100), 2)
+      #   print(f'Persentase Kesempurnaaan: {perfection_percentage}%, ({best_objective_value}/{TARGET_OBJECTIVE})')
         
         
         # Visualisasi regresi
