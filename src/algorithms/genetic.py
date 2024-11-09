@@ -1,7 +1,7 @@
 import random
 import matplotlib.pyplot as plt
 import numpy as py
-from cube.cubeGenetic import create_magic_cube, objective_function, mutate, transform_to_3d
+from algorithms.cubeGenetic import create_magic_cube, objective_function, mutate, transform_to_3d
 import time
 
 # Konstanta
@@ -47,7 +47,7 @@ def genetic_algorithm():
     """Menjalankan algoritma genetika untuk menemukan magic cube terbaik."""
     # Membuat populasi awal
 
-    time.sleep(1)
+    start_time = time.time()
     population = [create_magic_cube() for _ in range(POPULATION_SIZE)]
     best_cube = None
     best_objective_value = float('inf')
@@ -58,10 +58,9 @@ def genetic_algorithm():
     if (iterations <= 0):
         print("jumlah iterasi tidak boleh 0 atau kurang! jalankan ulang program")
     else:
-        print("membuat populasi awal.....")
-        time.sleep(1)
         print("mengonfigurasi kubus.....")
-        time.sleep(1)
+        time.sleep(2)
+    
     # Iterasi untuk nemuin solusi optimal
         for generation in range(iterations):  
             print(f"Generasi: {generation+1}")
@@ -107,11 +106,14 @@ def genetic_algorithm():
                 print("Solusi optimal ditemukan!")
                 break
         
+        end_time = time.time()
+        duration = end_time - start_time
+        
         # Menampilkan solusi terbaik
-        time.sleep(1)
+        time.sleep(2)
         print("Selesai!")
         time.sleep(1)
-
+        print(f"Durasi pencarian: {duration:.2f} detik")
         print("\nState Kubus terbaik:")
         print(transform_to_3d(best_cube))
         time.sleep(2)
