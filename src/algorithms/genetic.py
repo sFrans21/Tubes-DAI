@@ -1,7 +1,7 @@
 import random
 import matplotlib.pyplot as plt
 import numpy as py
-from algorithms.cubeGenetic import create_magic_cube, objective_function, mutate, transform_to_3d
+from cube.cubeGenetic import create_magic_cube, objective_function, mutate, transform_to_3d
 import time
 
 # Konstanta
