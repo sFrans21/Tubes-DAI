@@ -12,12 +12,12 @@ Mengimplementasikan algoritma-algoritma dalam machine learning untuk menemukan k
 
 
 ## Pembagian tugas
-| Nama Anggota | Tugas                          |
-|--------------|--------------------------------|
-| Anggota 1    | Bagian Frontend (UI, interaksi)|
-| Anggota 2    | Bagian Backend (API, logika)   |
-| Anggota 3    | Integrasi dan testing          |
-| Anggota 4    | Dokumentasi dan deployment     |
+| Nama Anggota                      | Tugas                          |
+|-----------------------------------|--------------------------------|
+|Hanan Fitra Salam / 18222133       | Bagian Frontend (UI, interaksi)|
+|Salsabila Azzahra / 18222139       | Bagian Backend (API, logika)   |
+|Samuel Franciscus T.H / 18222131   | Integrasi dan testing          |
+|M. Reffy Haykal / 18222103         | Dokumentasi dan deployment     |
 
 
 
