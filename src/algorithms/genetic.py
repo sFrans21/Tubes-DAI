@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as py
 from numpy import mean
 from gencube import create_magic_cube, objective_function, mutate, transform_to_3d
+# from cube.Magiccube import MagicCube
 import time
 
 # Konstanta
