@@ -1,6 +1,7 @@
 import numpy as np
 from itertools import product
 
+# Kubus akan di generate dari lapisan bawah ke lapisan atas. Jadi bayangkan saja layer1 ditumpuk layer2 ditumpuk layer3 dan seterusnya
 class MagicCube:
     def __init__(self, N=5, magic_number=315):
         self.N = N
