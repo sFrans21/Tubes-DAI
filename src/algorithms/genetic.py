@@ -5,7 +5,7 @@ from gencube import create_magic_cube, objective_function, mutate, transform_to_
 import time
 
 # Konstanta
-POPULATION_SIZE = 1000
+# POPULATION_SIZE = 1000     
 TARGET_OBJECTIVE = 0  # Nilai sempurna
 
 def select_parent(population):
@@ -46,15 +46,23 @@ def fill_remaining(child, parent, start, end):
 def genetic_algorithm():
     """Menjalankan algoritma genetika untuk menemukan magic cube terbaik."""
     # Membuat populasi awal
-
+    iterations = int(input("Berikan jumlah iterasi/generasi: "))
+    populations = int(input("Berikan jumlah populasi yang diinginkan: "))
+    
     start_time = time.time()
-    population = [create_magic_cube() for _ in range(POPULATION_SIZE)]
+    population = [create_magic_cube() for _ in range(populations)]
     best_cube = None
     best_objective_value = float('inf')
     objective_value_reg = []
-    iterations = 0
+    # iterations = 0
     
-    iterations = int(input("Berikan jumlah iterasi/generasi: "))
+    
+    time.sleep(1)
+    print()
+    print("State awal:")
+    rand_pop = random.sample(population,1)  # ngambil satu state secara acak dari population sebagai state awal
+    print(transform_to_3d(rand_pop))
+    
     if (iterations <= 0):
         print("jumlah iterasi tidak boleh 0 atau kurang! jalankan ulang program")
     else:
@@ -67,7 +75,7 @@ def genetic_algorithm():
             
             new_population = []
             
-            while len(new_population) < POPULATION_SIZE:
+            while len(new_population) < populations:
                 # Memilih dua parent terbaik
                 parent1 = select_parent(population)
                 parent2 = select_parent(population)
@@ -123,13 +131,15 @@ def genetic_algorithm():
         
         # Visualisasi regresi
         plt.plot(objective_value_reg, marker='o')
-        plt.title("Objective Value Progression")
+        plt.title("Objective Function Progression")
         plt.xlabel("Generation")
-        plt.ylabel("Best Objective Value")
+        plt.ylabel("Best Objective Function")
         plt.show()
+
 
 #runn
 if __name__ == "__main__":
     genetic_algorithm()
+
 
 
