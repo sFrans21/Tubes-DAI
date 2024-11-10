@@ -6,7 +6,9 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '.
 
 from cube.Magiccube import MagicCube
 
+# Class SteepestHillClimbing untuk mencari solusi dari kubus dengan algoritma Steepest Ascent Hill Climbing
 class SteepestHillClimbing:
+    # Inisialisasi kubus, skor awal, dan maksimum iterasi
     def __init__(self, max_iterations=1000):
         self.solver = MagicCube()
         self.initial_state = self.solver.cube
@@ -14,10 +16,12 @@ class SteepestHillClimbing:
         self.max_iterations = max_iterations
         self.history = []
 
+    # Mencari solusi dari kubus
     def search(self):
         iteration_count = 1
         start_time = time.time()
 
+        # Mencari tetangga terbaik dari kubus
         while iteration_count <= self.max_iterations:
             neighbors = self.solver.neighbors_function(self.initial_state)
             best_neighbor = None
@@ -31,7 +35,8 @@ class SteepestHillClimbing:
 
             if best_neighbor is None:
                 break
-
+            
+            # Mengganti kubus awal dengan kubus tetangga terbaik
             self.initial_state = best_neighbor
             self.objective_function = best_score
             self.history.append(self.objective_function)
@@ -46,6 +51,7 @@ class SteepestHillClimbing:
         execute_time = end_time - start_time
         return self.initial_state, self.objective_function, execute_time, self.history, iteration_count
 
+    # Mengecek apakah kubus sudah selesai
     def is_solved(self, score):
         return score == 0
 

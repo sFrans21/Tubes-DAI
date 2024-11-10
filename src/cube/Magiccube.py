@@ -4,11 +4,13 @@ from itertools import product
 
 # Kubus akan di generate dari lapisan bawah ke lapisan atas. Jadi bayangkan saja layer1 ditumpuk layer2 ditumpuk layer3 dan seterusnya
 class MagicCube:
+    # Membuat kubus dengan ukuran N x N x N dan angka yang diacak
     def __init__(self, N=5, magic_number=315):
         self.N = N
         self.MAGIC_NUMBER = magic_number
         self.cube = self.initialize_cube()
     
+    # Menginisialisasi kubus dengan angka yang diacak
     def initialize_cube(self):
         numbers = np.arange(1, self.N**3 + 1)
         np.random.shuffle(numbers)
@@ -25,6 +27,7 @@ class MagicCube:
             raise ValueError(f"Ukuran kubus adalah {cube.shape}, seharusnya {(self.N, self.N, self.N)}")
 
         score = 0
+        # Menghitung skor dari setiap baris, kolom, dan diagonal
         for i in range(self.N):
             score += abs(np.sum(cube[i, :, :]) - self.MAGIC_NUMBER * self.N)
             score += abs(np.sum(cube[:, i, :]) - self.MAGIC_NUMBER * self.N)
@@ -42,11 +45,13 @@ class MagicCube:
 
         return score
 
+    # Mencari tetangga dari kubus
     def neighbors_function(self, cube=None):
         if cube is None:
             cube = self.cube
 
         neighbors = []
+        # Mencari semua kemungkinan posisi yang bisa ditukar
         positions = np.array(list(product(range(self.N), repeat=3)))
 
         for x, y, z in positions:
