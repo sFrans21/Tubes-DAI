@@ -43,7 +43,7 @@ class SteepestHillClimbing:
 
         end_time = time.time()
         execute_time = end_time - start_time
-        return self.initial_state, self.objective_function, execute_time, self.history
+        return self.initial_state, self.objective_function, execute_time, self.history, iteration_count
 
     def is_solved(self, score):
         return score == 0
