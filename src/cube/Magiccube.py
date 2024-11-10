@@ -13,7 +13,7 @@ class MagicCube:
         np.random.shuffle(numbers)
         return numbers.reshape((self.N, self.N, self.N))
     
-    # Menghitung skor heuristik dari kubus
+    # Menghitung skor objektif function dari kubus
     def fitness(self, cube=None):
         if cube is None:
             cube = self.cube
