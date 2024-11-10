@@ -1,3 +1,4 @@
+# File: SteepestHillClimb.py
 import sys
 import os
 import time
@@ -48,23 +49,23 @@ class SteepestHillClimbing:
     def is_solved(self, score):
         return score == 0
 
-if __name__ == "__main__":
-    main = SteepestHillClimbing(max_iterations=100)
-    print("Visualisasi kubus dari bawah ke atas, jadinya bayangkan tiap lapisan ditumpuk saja")
-    print("Kubus awal (random):")
-    print(main.initial_state)
-    print("Skor awal:", main.objective_function)
+# if __name__ == "__main__":
+#     main = SteepestHillClimbing(max_iterations=100)
+#     print("Visualisasi kubus dari bawah ke atas, jadinya bayangkan tiap lapisan ditumpuk saja")
+#     print("Kubus awal (random):")
+#     print(main.initial_state)
+#     print("Skor awal:", main.objective_function)
 
-    final_state, final_score, execute_time, history = main.search()
-    print("Skor akhir:", final_score)
-    print("Kubus akhir:")
-    print(final_state)
+#     final_state, final_score, execute_time, history = main.search()
+#     print("Skor akhir:", final_score)
+#     print("Kubus akhir:")
+#     print(final_state)
 
-    import matplotlib.pyplot as plt
+#     import matplotlib.pyplot as plt
 
-    # Visualisasi skor tiap iterasi
-    plt.plot(history)
-    plt.xlabel('Iteration')
-    plt.ylabel('Score')
-    plt.title('Score per Iteration')
-    plt.show()
+#     # Visualisasi skor tiap iterasi
+#     plt.plot(history)
+#     plt.xlabel('Iteration')
+#     plt.ylabel('Score')
+#     plt.title('Score per Iteration')
+#     plt.show()

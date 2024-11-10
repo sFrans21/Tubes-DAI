@@ -1,3 +1,4 @@
+# File: Magiccube.py
 import numpy as np
 from itertools import product
 
