@@ -21,11 +21,13 @@ class SimulatedAnnealing:
         self.iteration_scores = []  # Untuk menyimpan skor setiap iterasi
         self.probabilities = []  # Untuk menyimpan nilai e^(-delta_E / T) pada setiap iterasi
         self.total_stuck_count = 0  # Frekuensi stuck di local optima
+        self.start_time = None  # Inisialisasi untuk start_time
+        self.end_time = None
 
     def search(self):
         iteration_count = 1
         stagnation_counter = 0  # Counter untuk mendeteksi kondisi stuck
-        start_time = time.time()
+        self.start_time = time.time()
 
         while self.temperature > self.temperature_threshold:
             neighbors = self.solver.neighbors_function(self.initial_state)
@@ -67,10 +69,11 @@ class SimulatedAnnealing:
             self.temperature *= self.cooling_rate
             iteration_count += 1
 
-        end_time = time.time()
-        print(f"Waktu yang dibutuhkan: {end_time - start_time} detik")
+        self.end_time = time.time()
+        self.execution_time = self.end_time - self.start_time
+        print(f"Waktu yang dibutuhkan: {self.execution_time} detik")
         print(f"Total frekuensi stuck di local optima: {self.total_stuck_count}")
-        return self.initial_state, self.objective_function
+        return self.initial_state, self.objective_function, self.execution_time
 
     def is_solved(self, score):
         return score == 0
@@ -85,6 +88,12 @@ class SimulatedAnnealing:
         plt.ylabel("Objective Function Value (Score)")
         plt.title("Objective Function Value over Iterations in Simulated Annealing")
         plt.legend()
+
+        plt.tight_layout()
+        plt.show()
+
+    def plot_probability(self):
+        plt.figure(figsize=(10, 5))
 
         # Plotting Probability e^(-delta_E / T) over Iterations
         plt.subplot(2, 1, 2)
