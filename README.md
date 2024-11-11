@@ -16,6 +16,9 @@ Komponen utama dalam repositori kami adalah src. Disini kami menyimpan seluruh k
 
 
 
+
+
+#Pembagian tugas
 | Nama Anggota                      | Tugas                                                                                                                                                   |
 |-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Hanan Fitra Salam / 18222133      | Implementasi algoritma simulated annealing bagian plotting; Laporan: Hasil eksperimen simulated annealing; Kesimpulan dan saran                         |
