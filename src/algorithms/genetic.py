@@ -42,7 +42,7 @@ def crossover(parent1, parent2):
     return child1, child2
 
 def fill_remaining(child, parent, start, end):
-    """Fills remaining positions in child array."""
+
     size = len(parent)
     child_pos = end + 1
     parent_pos = end + 1
@@ -55,7 +55,7 @@ def fill_remaining(child, parent, start, end):
 
 # Algoritma Genetika
 def genetic_algorithm():
-    """Menjalankan algoritma genetika untuk menemukan magic cube terbaik."""
+
     # Membuat populasi awal
     iterations = int(input("Berikan jumlah iterasi/generasi: "))
     populations = int(input("Berikan jumlah populasi yang diinginkan: "))

@@ -6,12 +6,12 @@ MAGIC_CONST = 315
 
 
 def create_magic_cube():
-    """Membuat magic cube berukuran 5x5x5 dengan angka unik dari 1 sampai 125."""
+#    Membuat magic cube berukuran 5x5x5 dengan angka unik dari 1 sampai 125.
     return random.sample(range(1, 126), 125)
 
 
 def objective_function(magic_cube):
-    """Menghitung nilai objektif dari magic cube berdasarkan jumlah baris, kolom, dan diagonal yang mencapai MAGIC_CONST."""
+    # Menghitung nilai objektif dari magic cube berdasarkan jumlah baris, kolom, dan diagonal yang mencapai MAGIC_CONST.
     point = 0
     for k in range(5):  # Setiap layer
         for j in range(5):
@@ -42,7 +42,7 @@ def objective_function(magic_cube):
             line_sum_1 += magic_cube[25 * j + 5 * i + i] # kiri atas ke kanan bawah (k)
             line_sum_2 += magic_cube[25 * j + 5 * i + mirr]  #kanan atas ke kiri bawah (k)
             line_sum_3 += magic_cube[25 * i + 5 * j + i] # kiri atas ke kanan bawah (i)
-            line_sum_4 += magic_cube[25 * i + 5 * j + mirr] #kanan atas ke kiri bawah (i)     //nanti gw jelasin ini di kerkom kita ya gess
+            line_sum_4 += magic_cube[25 * i + 5 * j + mirr] #kanan atas ke kiri bawah (i)     
             line_sum_5 += magic_cube[25 * i + 5 * i + j]#kanan atas ke kiri bawah (j)
             line_sum_6 += magic_cube[25 * i + 5 * mirr + j] #kiri atas ke kanan bawah (j)
 
@@ -82,14 +82,12 @@ def objective_function(magic_cube):
     return float(point)
 
 
-def initialize_cube(self):
-    numbers = np.arange(1, self.N**3 + 1)
-    np.random.shuffle(numbers)
-    return numbers.reshape((self.N, self.N, self.N))
-# Fungsi mutasi untuk magic cube, menukar posisi angka dalam magic cube
 
+
+
+# Fungsi mutasi untuk magic cube, menukar posisi angka dalam magic cube
 def mutate(cube, mutation_rate=0.05):
-    """Mutasi magic cube dengan menukar beberapa angka secara acak, berdasarkan mutation_rate."""
+    # Mutasi magic cube dengan menukar beberapa angka secara acak, berdasarkan mutation_rate."""
     num_swaps = random.randint(1, 3)  # Nentuin berapa kali swap
     for _ in range(num_swaps):
         if random.random() < mutation_rate:
@@ -98,7 +96,7 @@ def mutate(cube, mutation_rate=0.05):
             
           
 def transform_to_3d(cube):
-    """Mengubah list berukuran 125 menjadi 5x5x5 magic cube (3D array)."""
+    # Mengubah list berukuran 125 menjadi 5x5x5 magic cube (3D array).
     return np.array(cube).reshape(5, 5, 5)
 
 
