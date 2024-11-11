@@ -15,7 +15,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '.
 from cube.gencube import create_magic_cube, objective_function, mutate, transform_to_3d
 
 # Konstanta
-# POPULATION_SIZE = 1000     
+   
 TARGET_OBJECTIVE = 0  # Nilai sempurna
 
 def select_parent(population):
@@ -150,17 +150,7 @@ def genetic_algorithm():
 
         
         
-        # Visualisasi regresi
-        # plt.plot(max_objective_value_reg, marker='o')
-        # plt.title("Max Objective Function Progression")
-        # plt.xlabel("Generation")
-        # plt.ylabel("Max Objective Function")
-        # plt.show()
-        # plt.plot(avg_objective_value_reg, marker='o')
-        # plt.title("Average Objective Function Progression")
-        # plt.xlabel("Generation")
-        # plt.ylabel("Average Objective Function")
-        # plt.show()
+       
         
         fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))  
 
@@ -182,9 +172,6 @@ def genetic_algorithm():
 
  
 
-# def average(population):
-#     average_objective_value = mean([objective_function(cube) for cube in population])
-#     print(average_objective_value)
     
 #runn
 if __name__ == "__main__":
