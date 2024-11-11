@@ -12,7 +12,7 @@ Komponen utama dalam repositori kami adalah src. Disini kami menyimpan seluruh k
 
 ## Cara Setup dan Run
 1. Clone Repositori ini ke komputer kalian secara manual, atau dengan buka terminal/command prompt, lalu jalankan:
-   git clone https://github.com/sFrans21/Tubes-DAI.git
+   `git clone https://github.com/sFrans21/Tubes-DAI.git`
    
 2. Pindah ke folder proyek yang telah di-clone
 3. Pindah ke folder algorithms
