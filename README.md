@@ -33,7 +33,7 @@ Komponen utama dalam repositori kami adalah src. Disini kami menyimpan seluruh k
 |-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Hanan Fitra Salam / 18222133      | Implementasi algoritma simulated annealing bagian plotting; Laporan: Hasil eksperimen simulated annealing; Kesimpulan dan saran                         |
 | Salsabila Azzahra / 18222139      | Implementasi proses algoritma simulated annealing; Laporan: Penjelasan implementasi algoritma simulated annealing                                      |
-| Samuel Franciscus T.H / 18222131  | Implementasi algoritma genetic.py dan gencube.py (Magic Cube untuk genetic); Laporan: Pemilihan Objective Function; Penjelasan algoritma Genetic; Hasil eksperimen dan analisis algoritma Genetic |
+| Samuel Franciscus T.H / 18222131  | Implementasi algoritma genetic.py dan gencube.py (Magic Cube untuk genetic); Laporan: Pemilihan Objective Function; Penjelasan algoritma Genetic; Hasil eksperimen dan analisis algoritma Genetic; README.md |
 | M. Reffy Haykal / 18222103        | Implementasi algoritma Magiccube.py (untuk Steepest Ascent Hill-Climbing dan Simulated Annealing), SteepestHillClimb.py, visual.py; Laporan: Penjelasan implementasi Magic Cube; Penjelasan implementasi Steepest Ascent Hill-Climbing |
 
 
