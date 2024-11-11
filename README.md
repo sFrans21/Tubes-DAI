@@ -11,21 +11,18 @@ Mengimplementasikan algoritma-algoritma dalam machine learning untuk menemukan k
 Komponen utama dalam repositori kami adalah src. Disini kami menyimpan seluruh kode implementasi atas semua algoritma. (cube) berisi kode implementasi dari kubus, dan algorithms berisi kode implementasi dari ketiga algoritma: simulated annealing, steepest ascent hill-climbing, dan genetic algorithm
 
 ## Cara Setup dan Run
-1. Clone Repositori ini ke komputer kalian secara manual, atau dengan buka terminal/command prompt, lalu jalankan: git clone https://github.com/sFrans21/Tubes-DAI.git
-2. 
+1. Clone Repositori ini ke komputer kalian secara manual, atau dengan buka terminal/command prompt, lalu jalankan:
+   git clone https://github.com/sFrans21/Tubes-DAI.git
+   
+2. Pindah ke folder proyek yang telah di-clone
+3. Pindah ke folder algorithms
+4. Jalankan tiap algoritma dengan script berikut:
+   python [nama file algoritma]
 
-Clone Repositori
-Clone repositori ini ke komputer Anda dengan menjalankan perintah berikut di terminal:
 
-bash
-Salin kode
-git clone https://github.com/sFrans21/Tubes-DAI.git
-2. Masuk ke Folder Proyek
-Pindah ke folder proyek yang telah di-clone:
 
-bash
-Salin kode
-cd Tubes-DAI
+
+
 
 
 
