@@ -1,11 +1,13 @@
 import random
 import matplotlib.pyplot as plt
 import numpy as py
+from numpy import mean
 from gencube import create_magic_cube, objective_function, mutate, transform_to_3d
+# from cube.Magiccube import MagicCube
 import time
 
 # Konstanta
-POPULATION_SIZE = 1000
+# POPULATION_SIZE = 1000     
 TARGET_OBJECTIVE = 0  # Nilai sempurna
 
 def select_parent(population):
@@ -46,15 +48,25 @@ def fill_remaining(child, parent, start, end):
 def genetic_algorithm():
     """Menjalankan algoritma genetika untuk menemukan magic cube terbaik."""
     # Membuat populasi awal
-
+    iterations = int(input("Berikan jumlah iterasi/generasi: "))
+    populations = int(input("Berikan jumlah populasi yang diinginkan: "))
+    
     start_time = time.time()
-    population = [create_magic_cube() for _ in range(POPULATION_SIZE)]
+    population = [create_magic_cube() for _ in range(populations)]
     best_cube = None
     best_objective_value = float('inf')
-    objective_value_reg = []
-    iterations = 0
+    max_objective_value_reg = []
+    avg_objective_value_reg = []
+    # iterations = 0
     
-    iterations = int(input("Berikan jumlah iterasi/generasi: "))
+    
+    time.sleep(1)
+    print()
+    print("State kubus awal:")
+    rand_pop = random.sample(population,1)  # ngambil satu state secara acak dari population sebagai state awal
+    print(transform_to_3d(rand_pop))
+    print()
+    
     if (iterations <= 0):
         print("jumlah iterasi tidak boleh 0 atau kurang! jalankan ulang program")
     else:
@@ -67,7 +79,7 @@ def genetic_algorithm():
             
             new_population = []
             
-            while len(new_population) < POPULATION_SIZE:
+            while len(new_population) < populations:
                 # Memilih dua parent terbaik
                 parent1 = select_parent(population)
                 parent2 = select_parent(population)
@@ -91,14 +103,22 @@ def genetic_algorithm():
             # nentuin kubus terbaik dalam populasi baru
             current_best = min(population, key=lambda cube: abs(objective_function(cube) - TARGET_OBJECTIVE))
             current_best_value = objective_function(current_best)
-            
+            average_objective_value = mean([objective_function(cube) for cube in population])
+
             # meriksa apakah solusi saat ini lebih baik
             if abs(current_best_value - TARGET_OBJECTIVE) < abs(best_objective_value - TARGET_OBJECTIVE):
                 best_cube = current_best
                 best_objective_value = current_best_value
+            
+            
+            #memeriksa nilai objective runction rata-rata dari populasi kubus
+            average_objective_value = mean([objective_function(cube) for cube in population])
+
                 
-            objective_value_reg.append(best_objective_value)
+            max_objective_value_reg.append(best_objective_value)
+            avg_objective_value_reg.append(average_objective_value)
             print(f"Nilai objektif terbaik saat ini: {best_objective_value}")
+            print(f"Nilai Objektif rata-rata: {average_objective_value}")
             print()
             
             # berhenti jika menemukan solusi optimal  (most likely gaakan kejadian but gaada salahnya)
@@ -114,7 +134,7 @@ def genetic_algorithm():
         print("Selesai!")
         time.sleep(1)
         print(f"Durasi pencarian: {duration:.2f} detik")
-        print("\nState Kubus terbaik:")
+        print("\nState Kubus akhir (terbaik):")
         print(transform_to_3d(best_cube))
         time.sleep(2)
         print()
@@ -122,14 +142,42 @@ def genetic_algorithm():
         
         
         # Visualisasi regresi
-        plt.plot(objective_value_reg, marker='o')
-        plt.title("Objective Value Progression")
-        plt.xlabel("Generation")
-        plt.ylabel("Best Objective Value")
+        # plt.plot(max_objective_value_reg, marker='o')
+        # plt.title("Max Objective Function Progression")
+        # plt.xlabel("Generation")
+        # plt.ylabel("Max Objective Function")
+        # plt.show()
+        # plt.plot(avg_objective_value_reg, marker='o')
+        # plt.title("Average Objective Function Progression")
+        # plt.xlabel("Generation")
+        # plt.ylabel("Average Objective Function")
+        # plt.show()
+        
+        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))  
+
+        # Max Objective Function
+        ax1.plot(max_objective_value_reg, marker='o')
+        ax1.set_title("Max Objective Function Progression")
+        ax1.set_xlabel("Generation")
+        ax1.set_ylabel("Max Objective Function")
+
+        # Average Objective Function
+        ax2.plot(avg_objective_value_reg, marker='o')
+        ax2.set_title("Average Objective Function Progression")
+        ax2.set_xlabel("Generation")
+        ax2.set_ylabel("Average Objective Function")
+        plt.subplots_adjust(wspace=1)
+        
+        plt.tight_layout()  
         plt.show()
 
+ 
+
+# def average(population):
+#     average_objective_value = mean([objective_function(cube) for cube in population])
+#     print(average_objective_value)
+    
 #runn
 if __name__ == "__main__":
     genetic_algorithm()
-
 
