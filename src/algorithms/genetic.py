@@ -1,18 +1,26 @@
+import sys
+import os
 import random
 import matplotlib.pyplot as plt
 import numpy as py
 from numpy import mean
-# from gencube import create_magic_cube, objective_function, mutate, transform_to_3d
-from cube.gencube import create_magic_cube, objective_function, mutate, transform_to_3d
 # from cube.Magiccube import MagicCube
 import time
+
+# Menambahkan path ke direktori 'src' agar modul 'cube' dapat ditemukan
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'src')))
+
+
+# from gencube import create_magic_cube, objective_function, mutate, transform_to_3d
+from cube.gencube import create_magic_cube, objective_function, mutate, transform_to_3d
 
 # Konstanta
 # POPULATION_SIZE = 1000     
 TARGET_OBJECTIVE = 0  # Nilai sempurna
 
 def select_parent(population):
-    candidates = random.sample(population, 20)
+    sample_size = min(20, len(population))  # Pastikan ukuran sampel tidak lebih besar dari ukuran populasi
+    candidates = random.sample(population, sample_size)
     candidates.sort(key=lambda cube: abs(objective_function(cube) - TARGET_OBJECTIVE))
     return candidates[0]
 
