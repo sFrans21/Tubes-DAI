@@ -14,6 +14,18 @@ Komponen utama dalam repositori kami adalah src. Disini kami menyimpan seluruh k
 1. Clone Repositori ini ke komputer kalian secara manual, atau dengan buka terminal/command prompt, lalu jalankan: git clone https://github.com/sFrans21/Tubes-DAI.git
 2. 
 
+Clone Repositori
+Clone repositori ini ke komputer Anda dengan menjalankan perintah berikut di terminal:
+
+bash
+Salin kode
+git clone https://github.com/sFrans21/Tubes-DAI.git
+2. Masuk ke Folder Proyek
+Pindah ke folder proyek yang telah di-clone:
+
+bash
+Salin kode
+cd Tubes-DAI
 
 
 
