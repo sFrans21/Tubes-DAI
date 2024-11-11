@@ -33,6 +33,7 @@ class MagicCube:
             score += abs(np.sum(cube[:, i, :]) - self.MAGIC_NUMBER * self.N)
             score += abs(np.sum(cube[:, :, i]) - self.MAGIC_NUMBER * self.N)
 
+            # Menghitung skor dari diagonal 
             score += abs(np.sum(np.diagonal(cube[i, :, :])) - self.MAGIC_NUMBER)
             score += abs(np.sum(np.diagonal(np.fliplr(cube[i, :, :]))) - self.MAGIC_NUMBER)
             score += abs(np.sum(np.diagonal(cube[:, i, :])) - self.MAGIC_NUMBER)
@@ -40,6 +41,7 @@ class MagicCube:
             score += abs(np.sum(np.diagonal(cube[:, :, i])) - self.MAGIC_NUMBER)
             score += abs(np.sum(np.diagonal(np.fliplr(cube[:, :, i]))) - self.MAGIC_NUMBER)
 
+        # Menghitung skor dari diagonal kubus
         score += abs(np.sum([cube[i, i, i] for i in range(self.N)]) - self.MAGIC_NUMBER)
         score += abs(np.sum([cube[i, i, self.N - i - 1] for i in range(self.N)]) - self.MAGIC_NUMBER)
 
