@@ -17,7 +17,7 @@ Komponen utama dalam repositori kami adalah src. Disini kami menyimpan seluruh k
 2. Pindah ke folder proyek yang telah di-clone
 3. Pindah ke folder algorithms
 4. Jalankan tiap algoritma dengan script berikut:
-   python [nama file algoritma]
+   python [nama file algoritma].py
 
 
 
