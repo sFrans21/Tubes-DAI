@@ -24,31 +24,25 @@ class SteepestHillClimbing:
         # Mencari tetangga terbaik dari kubus
         while iteration_count <= self.max_iterations:
             neighbors = self.solver.neighbors_function(self.initial_state)
-            best_neighbor = None
-            best_score = self.objective_function
-            
-            for neighbor in neighbors:
-                neighbor_score = self.solver.fitness(neighbor)
-                if neighbor_score < best_score:
-                    best_score = neighbor_score
-                    best_neighbor = neighbor
-
-            if best_neighbor is None:
-                break
+            best_neighbor = min(neighbors, key=self.solver.fitness)
+            best_score = self.solver.fitness(best_neighbor)
             
             # Mengganti kubus awal dengan kubus tetangga terbaik
-            self.initial_state = best_neighbor
-            self.objective_function = best_score
-            self.history.append(self.objective_function)
-            print(f"Iterasi {iteration_count}: Skor sekarang = {self.objective_function}")
-            
-            if self.is_solved(self.objective_function):
+            if best_score < self.objective_function:
+                self.initial_state = best_score
+                self.objective_function = best_score
+                self.history.append(self.objective_function)
+                print(f"Iterasi {iteration_count}: Skor sekarang = {self.objective_function}")
+                
+                if self.is_solved(self.objective_function):
+                    break
+
+            else:
                 break
             
             iteration_count += 1
 
-        end_time = time.time()
-        execute_time = end_time - start_time
+        execute_time = time.time() - start_time
         return self.initial_state, self.objective_function, execute_time, self.history, iteration_count
 
     # Mengecek apakah kubus sudah selesai

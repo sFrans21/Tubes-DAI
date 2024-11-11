@@ -9,7 +9,7 @@ def plot_cube(cube, title):
     
     for i in range(cube.shape[0]):
         ax = axes[i]
-        ax.matshow(np.zeros_like(cube[i]), cmap="Blues", alpha=0.1)  # Kotak kosong untuk menampilkan angka
+        ax.matshow(np.zeros_like(cube[i]), cmap="Blues", alpha=0.1) 
         for (j, k), val in np.ndenumerate(cube[i]):
             ax.text(k, j, str(val), ha='center', va='center', fontsize=8)
         ax.set_xticks([])
