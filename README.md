@@ -1,43 +1,52 @@
 # Tubes-DAI
 
-Mengimplementasikan algoritma-algoritma dalam machine learning untuk menemukan kondisi terbaik dari kubus ajaib berukuran 5x5x5
+Implementation of machine learning algorithms to find the optimal configuration of a **5×5×5 Magic Cube**.
 
-## Daftar Isi
-- [Deskripsi Singkat](#deskripsi-singkat)
-- [Cara Setup dan Run](#cara-setup-dan-run)
-- [Pembagian Tugas](#pembagian-tugas)
+## Table of Contents
+- [Brief Description](#brief-description)
+- [Setup and Run Instructions](#setup-and-run-instructions)
+- [Task Distribution](#task-distribution)
 
-## Deskripsi singkat
-Komponen utama dalam repositori kami adalah src. Disini kami menyimpan seluruh kode implementasi atas semua algoritma. (cube) berisi kode implementasi dari kubus, dan algorithms berisi kode implementasi dari ketiga algoritma: simulated annealing, steepest ascent hill-climbing, dan genetic algorithm
+## Brief Description
+The main component of this repository is the **`src`** directory. This folder contains all code implementations of the algorithms used in this project.
 
-## Cara Setup dan Run
-1. Clone Repositori ini ke komputer kalian secara manual, atau dengan buka terminal/command prompt, lalu jalankan:
-   `git clone https://github.com/sFrans21/Tubes-DAI.git`
-   
-2. Pindah ke folder proyek yang telah di-clone
-3. Pindah ke folder algorithms
-4. Jalankan tiap algoritma dengan script berikut:
-   python [nama file algoritma].py
+- The **`cube`** directory contains the implementation of the Magic Cube structure.
+- The **`algorithms`** directory contains the implementations of the three algorithms used in this project:
+  - Simulated Annealing
+  - Steepest Ascent Hill-Climbing
+  - Genetic Algorithm
 
+These algorithms are used to search for the best configuration of a **5×5×5 Magic Cube**.
 
+## Setup and Run Instructions
 
+1. Clone this repository to your computer manually, or open a terminal/command prompt and run:
 
+```bash
+git clone https://github.com/sFrans21/Tubes-DAI.git
+```
 
+2. Navigate to the cloned project directory.
 
+3. Move to the **`algorithms`** folder.
 
+4. Run each algorithm using the following command:
 
+```bash
+python [algorithm_filename].py
+```
 
+Example:
 
-## Pembagian tugas
-| Nama Anggota                      | Tugas                                                                                                                                                   |
-|-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Hanan Fitra Salam / 18222133      | Implementasi algoritma simulated annealing bagian plotting; Laporan: Hasil eksperimen simulated annealing; Kesimpulan dan saran                         |
-| Salsabila Azzahra / 18222139      | Implementasi proses algoritma simulated annealing; Laporan: Penjelasan implementasi algoritma simulated annealing                                      |
-| Samuel Franciscus T.H / 18222131  | Implementasi algoritma genetic.py dan gencube.py (Magic Cube untuk genetic); Laporan: Pemilihan Objective Function; Penjelasan algoritma Genetic; Hasil eksperimen dan analisis algoritma Genetic; README.md |
-| M. Reffy Haykal / 18222103        | Implementasi algoritma Magiccube.py (untuk Steepest Ascent Hill-Climbing dan Simulated Annealing), SteepestHillClimb.py, visual.py; Laporan: Penjelasan implementasi Magic Cube; Penjelasan implementasi Steepest Ascent Hill-Climbing |
+```bash
+python genetic.py
+```
 
+## Task Distribution
 
-
-
-
-spek: https://docs.google.com/document/d/1QDj9Pi3HrBr2VdFIvsnrA8KXaISpEr4JaGlYRxOUPWw/edit?tab=t.0
+| Team Member | Responsibilities |
+|-------------|------------------|
+| **Hanan Fitra Salam / 18222133** | Implementation of the **Simulated Annealing plotting component**; Report: Experimental results of Simulated Annealing; Conclusion and recommendations |
+| **Salsabila Azzahra / 18222139** | Implementation of the **Simulated Annealing algorithm process**; Report: Explanation of the Simulated Annealing implementation |
+| **Samuel Franciscus T.H / 18222131** | Implementation of **genetic.py** and **gencube.py** (Magic Cube for Genetic Algorithm); Report: Objective function selection; Explanation of the Genetic Algorithm; Experimental results and analysis of the Genetic Algorithm; README.md |
+| **M. Reffy Haykal / 18222103** | Implementation of **Magiccube.py** (for Steepest Ascent Hill-Climbing and Simulated Annealing), **SteepestHillClimb.py**, and **visual.py**; Report: Explanation of the Magic Cube implementation; Explanation of the Steepest Ascent Hill-Climbing implementation |
